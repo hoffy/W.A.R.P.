@@ -3,7 +3,7 @@ W.A.R.P. - Workshop Automation & Reporting Protocol
 Narrative::
 ------------------------------------------------------------------------------------------------------------------------------------
 
-  W.A.R.P. is being developed for the proprietary use in my basement workshop.  It is not being developed for use anywhere else, however   you are welcome to custom fit it to your application under the terms of the license below and the LICENSE file found in the             repository at https://github.com/hoffy/W.A.R.P./
+  W.A.R.P. is being developed for the proprietary use in my basement workshop.  It is not being developed for use anywhere else, however   you are welcome to custom fit it to your application under the terms of the license below and the LICENSE file found in the             repository at https://github.com/hoffy/WARP./
   
   W.A.R.P. is an RS485 Half Duplex Based Home Automation Protocol or Network.  Using a three wire TRANSMIT, RECEIVE, Common Ground BUS.
   
