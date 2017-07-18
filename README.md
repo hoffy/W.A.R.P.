@@ -23,7 +23,8 @@ License::
                             under a Creative Commons Attribution-ShareAlike 4.0 International License.        
                          Permissions beyond the scope of this license may be available at hoffysworld.com.
                          
-          Credit for components, libraries, and functions produced by other authors are notated further down in this document
+                            Credit for components, libraries, and functions produced by other authors 
+                                           are notated further down in this document
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
