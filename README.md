@@ -7,9 +7,11 @@ however you are welcome to custom fit it to your application under the terms of 
 found in the repository at https://github.com/hoffy/WARP./
   
 W.A.R.P. is an RS485 Half Duplex Based Home Automation Protocol or Network.  
-Using a three wire TRANSMIT, RECEIVE, Common Ground BUS.  The Arduino's will use Serial Communication via the auto485 library developed
-by madleech.  Serial Communication is transceived to the BUS via MAX485 8 Pin DIP IC's as notated below.  The BUS will consist of
-standard CAT 5/6 Cable as used for Ethernet networking, but only three (3) wires will be employed at this time.
+Using a three wire TRANSMIT, RECEIVE, Common Ground BUS.  The Arduino's will use Serial Communication via the auto485 library
+developed by madleech.  Serial Communication is transceived to the BUS via MAX485 8 Pin DIP IC's as notated below.  The BUS will
+consist of standard CAT 5/6 Cable as used for Ethernet networking, but only three (3) wires will be employed at this time.
+
+A BUS Schematic will be provided once developed.
   
 W.A.R.P. will utilize an Arduino Mega 2560 Microcontroller as the "MASTER" unit equipped with a Seeed Studios Ethershield Ver. 1.0.
 
