@@ -13,6 +13,16 @@ W.A.R.P. will utilize an Arduino Mega 2560 Microcontroller as the "MASTER" unit 
 
 W.A.R.P. will utilize Arduino Pro Mini Microcontrollers as the "SLAVE" Units.
 
+License::
+------------------------------------------------------------------------------------------------------------------------------------
+                  W.A.R.P - Workshop Automation & Reporting Protocol by Steven D. Hofmeister "Hoffy" is licensed 
+                            under a Creative Commons Attribution-ShareAlike 4.0 International License.        
+                         Permissions beyond the scope of this license may be available at hoffysworld.com.
+                         
+          Credit for components, libraries, and functions produced by other authors are notated further down in this document
+
+------------------------------------------------------------------------------------------------------------------------------------
+
 Purpose::
 -------------------------------------------------------------------------------------------------------------------------------------
 W.A.R.P.'s purpose is to provide a network based GUI to control various componments around the workshop.  Sometimes, I will retire upstairs and forget to turn something off.  W.A.R.P. will allow for me to not only have local control via manual switch, but also the ability to override that switch via the GUI remotely.
@@ -25,16 +35,6 @@ Similar device configurations will be deployed as well.
 
 Eventually, analog data reporting will be phased into the protocol, allowing for various readings to be reported back to the GUI or for data logging to a MYSQL Database.
 -------------------------------------------------------------------------------------------------------------------------------------
-
-License::
-------------------------------------------------------------------------------------------------------------------------------------
-                  W.A.R.P - Workshop Automation & Reporting Protocol by Steven D. Hofmeister "Hoffy" is licensed 
-                            under a Creative Commons Attribution-ShareAlike 4.0 International License.        
-                         Permissions beyond the scope of this license may be available at hoffysworld.com.
-                         
-          Credit for components, libraries, and functions produced by other authors are notated further down in this document
-
-------------------------------------------------------------------------------------------------------------------------------------
 
 Hardware Requirements::
 ------------------------------------------------------------------------------------------------------------------------------------
