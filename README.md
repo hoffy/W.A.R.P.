@@ -25,15 +25,22 @@ License::
 
 Purpose::
 -------------------------------------------------------------------------------------------------------------------------------------
-W.A.R.P.'s purpose is to provide a network based GUI to control various componments around the workshop.  Sometimes, I will retire upstairs and forget to turn something off.  W.A.R.P. will allow for me to not only have local control via manual switch, but also the ability to override that switch via the GUI remotely.
+W.A.R.P.'s purpose is to provide a network based GUI to control various componments around the workshop.  S
+ometimes, I will retire upstairs and forget to turn something off.  W.A.R.P. will allow for me to not only have local control via 
+manual switch, but also the ability to override that switch via the GUI remotely.
 
-Example:  Main Workshop Lights are left on.  Even though the manaual light swtich is turned on, I will be able to tell those lights to turn off through the GUI.  Once returning to the Workhop, by turning the manual Switch OFF and then ON again will reactivate the lights locally.  
+Example:  Main Workshop Lights are left on.  Even though the manaual light swtich is turned on, I will be able to tell those lights 
+to turn off through the GUI.  Once returning to the Workhop, by turning the manual Switch OFF and then ON again will reactivate the
+lights locally.
 
-The Main Workshop Light Outlet Box will be fitted with a 110VAC to 12VDC voltage converter, An Arduino Pro Mini with a digitally controlled relay and the additional hardware for the RS485 BUS.  The light switch cover will be adapted to contain a Status LED and device reset switch.
+The Main Workshop Light Outlet Box will be fitted with a 110VAC to 12VDC voltage converter, An Arduino Pro Mini with a digitally
+controlled relay and the additional hardware for the RS485 BUS.  The light switch cover will be adapted to contain a Status LED and
+device reset switch.
 
 Similar device configurations will be deployed as well.
 
-Eventually, analog data reporting will be phased into the protocol, allowing for various readings to be reported back to the GUI or for data logging to a MYSQL Database.
+Eventually, analog data reporting will be phased into the protocol, allowing for various readings to be reported back to the GUI
+or for data logging to a MYSQL Database.
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Hardware Requirements::
