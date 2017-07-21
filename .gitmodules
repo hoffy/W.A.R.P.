@@ -1,0 +1,6 @@
+[submodule "Auto485"]
+	path = Auto485
+	url = https://github.com/madleech/Auto485
+[submodule "Arduino_getStringPartByNr"]
+	path = Arduino_getStringPartByNr
+	url = https://github.com/BenTommyE/Arduino_getStringPartByNr
