@@ -291,6 +291,7 @@ Serial.begin(9600);  // Initialize Debug Terminal
     Serial.print("This MASTER Device is Identifying as Device ID: ");
     Serial.print(ID);   
     Serial.println("");
+    Serial.println("Boot Complete");
   // ---------------------------------- END Initialize Communication Buses ------------------ 
    
    }  
@@ -386,7 +387,6 @@ HTTP_req = "";// Clearing string for next read
 while(bus.available()) {
 
 Incoming_Data= bus.readString();// read the incoming data as string
-
 Process_Incoming_Data(Incoming_Data);
 
 }
@@ -1466,6 +1466,7 @@ delay(10);
 }
    else if (DATA_TYPE != "A" || "B" || "S")
     {
+          
      Error_Handler(1);
     }
 
@@ -1519,15 +1520,18 @@ void Error_Handler(int ERR)
   case 1:
     Serial.println("ERROR #1-001 - Packet Identification Error - Non-Critical");
     Serial.println("Incoming Data did not begin with the correct packet identifier");
+    Serial.println("");
     break;
   
   case 2:
     Serial.println("ERROR #1-002 - Packet Parsing Error - Critical");
     Serial.println("The Data Packet properly identified but did not parse properly during processing");
+    Serial.println("");
     break;
   
   default: 
     Serial.println("Undefined Error:: The specific problem could not be identified, but and error has been indicated");
+    Serial.println("");
   break;
 }
 return;
