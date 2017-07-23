@@ -52,6 +52,8 @@ int TO_ID;         // Who are we sending to?
 int Switch;        // Which Local Switch are we needing to address?
 int State;        // Are we turning it on or off?
 int Sw_Status;
+int tx;
+int rx;
 //------------------------------------------------------------------------------------------------------------------------
 
 //--- String Definitions -------------------------------------------------------------------------------------------------
@@ -74,8 +76,8 @@ Auto485 bus(DE_PIN, RE_PIN); // new Auto485 wrapper using DE_PIN & RE_PIN to tog
 
 //--------------------- BEGIN Pin Assignment and Labeling ------------------------------------------------------------------------
 
-int Transmit_LED = 4;
-int Receive_LED = 5;
+int Reserved1 = 4;
+int Reserved2 = 5;
 int Online_LED = 6;
 int pin1 = 7;
 int pin2 = 8;
@@ -97,8 +99,8 @@ void setup() {
   bus.begin(9600); // RS485 Bus at 9600bps
   Serial.begin(9600);
 
-pinMode(Transmit_LED, OUTPUT);
-pinMode(Receive_LED, OUTPUT);
+pinMode(Reserved1, OUTPUT);
+pinMode(Reserved2, OUTPUT);
 pinMode(Online_LED, OUTPUT);
 pinMode(pin1, OUTPUT);
 pinMode(pin2, OUTPUT);
@@ -113,18 +115,6 @@ pinMode(pin10, OUTPUT);
 pinMode(pin11, OUTPUT);
 pinMode(pin12, OUTPUT);
 pinMode(pin13, OUTPUT);
-
-
-
-digitalWrite(Transmit_LED, HIGH);
-delay(2000);
-digitalWrite(Transmit_LED, LOW);
-digitalWrite(Receive_LED, HIGH);
-delay(2000);
-digitalWrite(Receive_LED, LOW);
-
-
-int Receive_LED = 5;
 
 //----------------------------------------------------------------------------------
   
@@ -205,7 +195,7 @@ void loop()
 {
     if (bus.available() > 0) 
     {
-      
+
       char c = bus.read();
 
         if(c == "E")
@@ -219,24 +209,8 @@ void loop()
          Incoming_Data += c;
         }
     }
+
 delay(1000);
-
-if (digitalRead(DE_PIN) == HIGH) 
-{ 
-digitalWrite(Transmit_LED,HIGH); 
-}
-else {
-digitalWrite(Transmit_LED,LOW);
-}
-
-if (digitalRead(RE_PIN) == HIGH) 
-{ 
-digitalWrite(Receive_LED,HIGH); 
-}
-else {
-digitalWrite(Receive_LED,LOW);
-}
-
 
     
 }
