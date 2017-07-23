@@ -76,20 +76,20 @@ Auto485 bus(DE_PIN, RE_PIN); // new Auto485 wrapper using DE_PIN & RE_PIN to tog
 
 int Transmit_LED = 4;
 int Receive_LED = 5;
-int pin1 = 6;
-int pin2 = 7;
-int pin3 = 8;
-int pin4 = 9;
-int pin5 = 10;
-int pin6 = 11;
-int pin7 = 12;
-int pin8 = 13;
-int pin9 = 14;
-int pin10 = 15;
-int pin11 = 16;
-int pin12 = 17;
-int pin13 = 18;
-int pin14 = 19;
+int Online_LED = 6;
+int pin1 = 7;
+int pin2 = 8;
+int pin3 = 9;
+int pin4 = 10;
+int pin5 = 11;
+int pin6 = 12;
+int pin7 = 13;
+int pin8 = 14;
+int pin9 = 15;
+int pin10 = 16;
+int pin11 = 17;
+int pin12 = 18;
+int pin13 = 19;
 
 //----- BEGIN Setup ------------------------------------------------------------------------------------------------------
 
@@ -99,6 +99,7 @@ void setup() {
 
 pinMode(Transmit_LED, OUTPUT);
 pinMode(Receive_LED, OUTPUT);
+pinMode(Online_LED, OUTPUT);
 pinMode(pin1, OUTPUT);
 pinMode(pin2, OUTPUT);
 pinMode(pin3, OUTPUT);
@@ -112,7 +113,7 @@ pinMode(pin10, OUTPUT);
 pinMode(pin11, OUTPUT);
 pinMode(pin12, OUTPUT);
 pinMode(pin13, OUTPUT);
-pinMode(pin14, OUTPUT);
+
 
 
 digitalWrite(Transmit_LED, HIGH);
@@ -192,6 +193,7 @@ delay(1000);
 Serial.flush();
 delay(1000);
 Serial.println(F("Boot Complete"));
+digitalWrite(Online_LED,HIGH);
 }
 
 //----- END Setup --------------------------------------------------------------------------------------------------------
