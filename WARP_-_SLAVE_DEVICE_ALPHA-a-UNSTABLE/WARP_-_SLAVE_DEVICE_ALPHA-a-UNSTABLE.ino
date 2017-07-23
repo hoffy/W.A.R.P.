@@ -66,53 +66,39 @@ String Data_Out[8]; // ID,OUT_TO_ID,Switch,Status
 //--------------------- BEGIN Configure RS485 BUS ------------------------------------------------------------------------
 
 #include <Auto485.h>
-#define DE_PIN 2
-#define RE_PIN 3
+#define DE_PIN 3
+#define RE_PIN 2
 Auto485 bus(DE_PIN, RE_PIN); // new Auto485 wrapper using DE_PIN & RE_PIN to toggle read/write mode on the MAX485
 
 //--------------------- END Configure RS485 BUS --------------------------------------------------------------------------
 
 //--------------------- BEGIN Pin Assignment and Labeling ------------------------------------------------------------------------
 
-int pin1 = 4;
-int pin2 = 5;
-int pin3 = 6;
-int pin4 = 7;
-int pin5 = 8;
-int pin6 = 9;
-int pin7 = 10;
-int pin8 = 11;
-int pin9 = 12;
-int pin10 = 13;
-int pin11 = 14;
-int pin12 = 15;
-int pin13 = 16;
-int pin14 = 17;
-int pin15 = 18;
-int pin16 = 19;
+int Transmit_LED = 4;
+int Receive_LED = 5;
+int pin1 = 6;
+int pin2 = 7;
+int pin3 = 8;
+int pin4 = 9;
+int pin5 = 10;
+int pin6 = 11;
+int pin7 = 12;
+int pin8 = 13;
+int pin9 = 14;
+int pin10 = 15;
+int pin11 = 16;
+int pin12 = 17;
+int pin13 = 18;
+int pin14 = 19;
 
-String pin1_Label =  "RP1 -  OFFLINE";
-String pin2_Label =  "RP2 -  OFFLINE";
-String pin3_Label =  "RP3 -  OFFLINE";
-String pin4_Label =  "RP4 -  OFFLINE";
-String pin5_Label =  "RP5 -  OFFLINE";
-String pin6_Label =  "RP6 -  OFFLINE";
-String pin7_Label =  "RP7 -  OFFLINE";
-String pin8_Label =  "RP8 -  OFFLINE";
-String pin9_Label =  "RP9 -  OFFLINE";
-String pin10_Label = "RP10 - OFFLINE";
-String pin11_Label = "RP11 - OFFLINE";
-String pin12_Label = "RP12 - OFFLINE";
-String pin13_Label = "RP13 - OFFLINE";
-String pin14_Label = "RP14 - OFFLINE";
-String pin15_Label = "RP15 - OFFLINE";
-String pin16_Label = "RP16 - OFFLINE";
 //----- BEGIN Setup ------------------------------------------------------------------------------------------------------
 
 void setup() {
   bus.begin(9600); // RS485 Bus at 9600bps
   Serial.begin(9600);
 
+pinMode(Transmit_LED, OUTPUT);
+pinMode(Receive_LED, OUTPUT);
 pinMode(pin1, OUTPUT);
 pinMode(pin2, OUTPUT);
 pinMode(pin3, OUTPUT);
@@ -127,8 +113,18 @@ pinMode(pin11, OUTPUT);
 pinMode(pin12, OUTPUT);
 pinMode(pin13, OUTPUT);
 pinMode(pin14, OUTPUT);
-pinMode(pin15, OUTPUT);
-pinMode(pin16, OUTPUT);
+
+
+digitalWrite(Transmit_LED, HIGH);
+delay(2000);
+digitalWrite(Transmit_LED, LOW);
+digitalWrite(Receive_LED, HIGH);
+delay(2000);
+digitalWrite(Receive_LED, LOW);
+
+
+int Receive_LED = 5;
+
 //----------------------------------------------------------------------------------
   
   Serial.println(F("       _____________________________________________________"));
@@ -222,6 +218,23 @@ void loop()
         }
     }
 delay(1000);
+
+if (digitalRead(DE_PIN) == HIGH) 
+{ 
+digitalWrite(Transmit_LED,HIGH); 
+}
+else {
+digitalWrite(Transmit_LED,LOW);
+}
+
+if (digitalRead(RE_PIN) == HIGH) 
+{ 
+digitalWrite(Receive_LED,HIGH); 
+}
+else {
+digitalWrite(Receive_LED,LOW);
+}
+
 
     
 }
