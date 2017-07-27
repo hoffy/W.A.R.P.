@@ -1,3 +1,6 @@
+
+
+
 /*
  |________________________________________________________________________________________________________________________|
  |----------------------------------- Workshop Automation & Reporting Protocol (WARP) ------------------------------------|
@@ -398,6 +401,7 @@ Process_Incoming_Data(Incoming_Data);
 // send the state of the switch to the web browser
 void GetAjaxData(EthernetClient cl)
 {
+
 cl.println(F("<div class='tg-wrap'>"));
 
 cl.println(F("<table class='tg'>"));
@@ -779,8 +783,22 @@ cl.println(F("</td>"));
 cl.println(F("</tr>"));
 
 cl.println(F("</table>"));
+
+
+if (Rem_Dev1[0] == 1) {                          //ISSUE:: Rem_Dev1[0] value (in this case 1) is being nulled before this point, or is not making it out of the Function Process_Incoming_Data Line 844 
+cl.println(F("<table class='tg'>"));
+cl.println(F("<tr>"));
+cl.println("<th class='tg-3ojx' colspan='8'> Device # ");
+cl.print(Rem_Dev1[0]);
+cl.print("</th>");
+cl.println(F("</tr>"));
+
+cl.println(F("</table>"));
+}
+
 cl.println(F("</div>"));
- 
+
+
     if(HTTP_req.indexOf("/?LS1_on") > 0)digitalWrite(pin1, HIGH);
     if(HTTP_req.indexOf("/?LS1_off") > 0) digitalWrite(pin1, LOW);
 
@@ -854,272 +872,7 @@ cl.println(F("</div>"));
     if(HTTP_req.indexOf("/?LS24_off") > 0) digitalWrite(pin24, LOW);
 
 
-  if (Rem_Dev1[0] == 1) {
-                                          //CURRENT FAIL POINT
-    //Serial.print(Rem_Dev1[0]);
-  cl.println(F("<div class='tg-wrap'>"));
-  cl.println(F("<table class='tg'>"));
-  cl.println(F("<tr>"));
-  cl.print("<th class='tg-3ojx' colspan='8'>Device#: ");
-  cl.print(Rem_Dev1[0]);
-  cl.print("</th>");
-  cl.println(F("</tr>"));
-  cl.println(F("<tr>"));
-
-  cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[1] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS1_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS1_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
-  cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[2] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS2_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS2_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[3] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS3_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS3_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[4] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS4_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS4_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[5] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS5_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS5_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[6] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS6_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS6_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[7] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS7_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS7_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[8] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS8_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS8_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
-
- cl.println(F("</tr>"));
-
-cl.println(F("<tr>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[9] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS9_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS9_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[10] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS10_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS10_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[11] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS11_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS11_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[12] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS12_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS12_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[13] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS13_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS13_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[14] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS14_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS14_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[15] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS15_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS15_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-    
- cl.println(F("<td class='tg-3ojx'>"));
-if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[16] && REMOTE_STATE == 1) {
-        cl.println(F("<center><a href='/?D1RS16_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-        cl.println(F("<center><p style='color:green'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
-    else {
-        cl.print(F("<center><a href='/?D1RS16_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-        cl.println(F("<center><p style='color:red'>"));
-        cl.print("Label");
-        cl.println(F("</p></center>"));
-    }
- cl.println(F("</td>"));
-  
-  
-  cl.println(F("</tr>"));
-  
-    cl.println(F("</table>"));
-  cl.println(F("</div>"));
-
-}  
 delay(150);
-
 }
 
     
@@ -1193,6 +946,7 @@ int Device_ID = Device.toInt();
 
 Serial.print("Receiving Boot Packet From Device#: ");
 Serial.print(Device_ID);
+Serial.println("");
 //if (Device_ID > 0 && Device_ID <= 32)
     //{
         // 1 to 32
@@ -1201,13 +955,15 @@ Serial.print(Device_ID);
         {
             case 1:
                 Rem_Dev1[0] = Device_ID;
-                Serial.println("");
+                Serial.println("I am assigning value to device array");
+                Serial.print("The Rem_Dev1[0] Value has been set to:");
                 Serial.print(Rem_Dev1[0]);
                 for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev1[i] = i;
                                 
                 }
                 break;
+            
             case 2:
                 Rem_Dev2[0] = Device_ID;
                 for (int i=0; i <= OUTPUT_COUNT; i++){
@@ -1223,6 +979,7 @@ Serial.print(Device_ID);
                                 
                 }
                 break;
+            
             case 4:
                 Rem_Dev4[0] = Device_ID;
                 for (int i=0; i <= OUTPUT_COUNT; i++){
@@ -1230,6 +987,7 @@ Serial.print(Device_ID);
                                 
                 }
                 break;
+            
             case 5:
                 Rem_Dev5[0] = Device_ID;
                 for (int i=0; i <= OUTPUT_COUNT; i++){
@@ -1243,12 +1001,11 @@ Serial.print(Device_ID);
                 for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev6[i] = i;
                 int L = i+2;
-                String Label = getStringPartByNr(INData, ' ', L);
+                
                 
                 }
                 break;           
-        
-        
+                
             case 7:
                 Rem_Dev7[0] = Device_ID;
                 for (int i=0; i <= OUTPUT_COUNT; i++){
