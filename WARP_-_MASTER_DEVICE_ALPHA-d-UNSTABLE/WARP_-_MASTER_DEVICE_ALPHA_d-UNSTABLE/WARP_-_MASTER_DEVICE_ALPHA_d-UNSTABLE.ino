@@ -785,7 +785,7 @@ cl.println(F("</tr>"));
 cl.println(F("</table>"));
 
 
-if (Rem_Dev1[0] == 1) {                          //ISSUE:: Rem_Dev1[0] value (in this case 1) is being nulled before this point, or is not making it out of the Function Process_Incoming_Data Line 844 
+if (Rem_Dev1[0] == 1) {                          //ISSUE  Line 788 - Device ID not being assigned or properly detected by GUI #1
 cl.println(F("<table class='tg'>"));
 cl.println(F("<tr>"));
 cl.println("<th class='tg-3ojx' colspan='8'> Device # ");
