@@ -793,6 +793,24 @@ cl.print(Rem_Dev1[0]);
 cl.print("</th>");
 cl.println(F("</tr>"));
 
+cl.println(F("<tr>"));
+
+cl.println(F("<td class='tg-3ojx'>"));
+if (digitalRead(pin21)) {
+        cl.println(F("<center><a href='/?LS21_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
+        cl.println(F("<center><p style='color:green'>"));
+        cl.print(LS21_Label);
+        cl.println(F("</p></center>"));
+    }
+    else {
+        cl.println(F("<center><a href='/?LS21_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
+        cl.println(F("<center><p style='color:red'>"));
+        cl.print(LS21_Label);
+        cl.println(F("</p></center>"));
+    }
+cl.println(F("</td>"));
+
+cl.println(F("</tr>"));
 cl.println(F("</table>"));
 }
 
@@ -955,9 +973,6 @@ Serial.println("");
         {
             case 1:
                 Rem_Dev1[0] = Device_ID;
-                Serial.println("I am assigning value to device array");
-                Serial.print("The Rem_Dev1[0] Value has been set to:");
-                Serial.print(Rem_Dev1[0]);
                 for (int i=1; i <= OUTPUT_COUNT; i++){
                 Rem_Dev1[i] = i;
                                 
