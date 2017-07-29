@@ -141,6 +141,8 @@ String LS22_Label = "OFFLINE";
 String LS23_Label = "OFFLINE";
 String LS24_Label = "OFFLINE";
 
+String RS1_1_Label = "REMOTE OFFLINE";
+
 String REMOTE_SWITCH_STATE; // Is The remote Switch on or off?  HIGH or LOW
 String Incoming_Data; // IN_ID, ID, Switch, Status, EOT
 String Data_Out[6]; // DATA_TYPE, ID, TO_ID, Switch, Status, EOT
@@ -785,6 +787,9 @@ cl.println(F("</tr>"));
 cl.println(F("</table>"));
 
 
+
+
+// Remote Devices GUI Population 
 if (Rem_Dev1[0] == 1) {                          
 cl.println(F("<table class='tg'>"));
 cl.println(F("<tr>"));
@@ -796,16 +801,16 @@ cl.println(F("</tr>"));
 cl.println(F("<tr>"));
 
 cl.println(F("<td class='tg-3ojx'>"));
-if (digitalRead(pin21)) {
-        cl.println(F("<center><a href='/?LS21_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
+if (FROM_ID == Rem_Dev1[0] && Rem_Dev1[1]> 0 && REMOTE_SWITCH == Rem_Dev1[1] && REMOTE_STATE == 1) {
+        cl.println(F("<center><a href='/?RS1-1_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
         cl.println(F("<center><p style='color:green'>"));
-        cl.print(LS21_Label);
+        cl.print(RS1_1_Label);
         cl.println(F("</p></center>"));
     }
     else {
-        cl.println(F("<center><a href='/?LS21_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
+        cl.println(F("<center><a href='/?RS1-1_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
         cl.println(F("<center><p style='color:red'>"));
-        cl.print(LS21_Label);
+        cl.print(RS1_1_Label);
         cl.println(F("</p></center>"));
     }
 cl.println(F("</td>"));
@@ -889,6 +894,42 @@ cl.println(F("</div>"));
     if(HTTP_req.indexOf("/?LS24_on") > 0)digitalWrite(pin24, HIGH);
     if(HTTP_req.indexOf("/?LS24_off") > 0) digitalWrite(pin24, LOW);
 
+    //Remote Switch Actions
+    
+    if(HTTP_req.indexOf("/?RS1-1_on") > 0)
+  {
+   // DATA_TYPE, ID, TO_ID, Switch, Status, EOT
+    bus.print("A");
+    bus.print(" ");
+    bus.print(ID);
+    bus.print(" ");
+    bus.print(Rem_Dev1[0]);
+    bus.print(" ");
+    bus.print("1");
+    bus.print(" ");
+    bus.print("1");
+    bus.print(" ");
+    bus.println("E");
+    
+  }
+    
+    if(HTTP_req.indexOf("/?RS1-1_off") > 0) 
+    {
+    bus.print("A");
+    bus.print(" ");
+    bus.print(ID);
+    bus.print(" ");
+    bus.print(Rem_Dev1[0]);
+    bus.print(" ");
+    bus.print("1");
+    bus.print(" ");
+    bus.print("0");
+    bus.print(" ");
+    bus.println("E");
+
+}
+    
+
 
 delay(150);
 }
@@ -913,7 +954,7 @@ void Process_Incoming_Data(String INData)
    DATA_TYPE = getStringPartByNr(INData, ' ', 0);
    
    
-    if (DATA_TYPE == "A")
+    if (DATA_TYPE == "S")
     {
      FROM_ID_INBOUND = getStringPartByNr(INData, ' ', 1);
      TO_ID_INBOUND = getStringPartByNr(INData, ' ', 2);
@@ -931,24 +972,12 @@ void Process_Incoming_Data(String INData)
 
               if (REMOTE_STATE == 0) 
               {
-                Serial.print("Device #");
-                Serial.print(FROM_ID);
-                Serial.print(" Switch #");
-                Serial.print(REMOTE_SWITCH);
-                Serial.print(" Switch State: ");
-                Serial.println(REMOTE_STATE);
-                //REMOTE_SWITCH_STATE IS "LOW";
+                
               }
 
               if (REMOTE_STATE == 1) 
               {
-                Serial.print("Device #");
-                Serial.print(FROM_ID);
-                Serial.print(" Switch #");
-                Serial.print(REMOTE_SWITCH);
-                Serial.print(" Switch State: ");
-                Serial.println(REMOTE_STATE);
-                //REMOTE_SWITCH_STATE IS "HIGH";
+                
               }
         }
     
@@ -1235,10 +1264,15 @@ delay(10);
 }
   
 delay(10);
+
+
+
 }
+
+
    else if (DATA_TYPE != "A" || "B" || "S")
     {
-          
+              
      Error_Handler(1);
     }
 
@@ -1303,7 +1337,8 @@ void Error_Handler(int ERR)
   
   default: 
     Serial.println("Undefined Error:: The specific problem could not be identified, but and error has been indicated");
-    Serial.println("");
+    
+    
   break;
 }
 return;
