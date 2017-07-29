@@ -786,10 +786,14 @@ cl.println(F("</tr>"));
 cl.println(F("</table>"));
 
 
+<<<<<<< HEAD
 
 
 // Remote Devices GUI Population 
 if (Rem_Dev1[0] == 1) {                          
+=======
+if (Rem_Dev1[0] == 1) {                          //ISSUE  MASTER DEVICE : Line 788 - Device ID not being assigned or properly detected by GUI #1
+>>>>>>> parent of 7124d60... Fixed MASTER DEVICE : Line 788 - Device ID not being assigned or properly detected by GUI #1
 cl.println(F("<table class='tg'>"));
 cl.println(F("<tr>"));
 cl.println("<th class='tg-3ojx' colspan='8'> Device # ");
@@ -1001,7 +1005,14 @@ Serial.println("");
         {
             case 1:
                 Rem_Dev1[0] = Device_ID;
+<<<<<<< HEAD
                 for (int i=1; i <= OUTPUT_COUNT; i++){
+=======
+                Serial.println("I am assigning value to device array");
+                Serial.print("The Rem_Dev1[0] Value has been set to:");
+                Serial.print(Rem_Dev1[0]);
+                for (int i=0; i <= OUTPUT_COUNT; i++){
+>>>>>>> parent of 7124d60... Fixed MASTER DEVICE : Line 788 - Device ID not being assigned or properly detected by GUI #1
                 Rem_Dev1[i] = i;
                                 
                 }
@@ -1009,7 +1020,7 @@ Serial.println("");
             
             case 2:
                 Rem_Dev2[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev2[i] = i;
                                 
                 }
@@ -1017,7 +1028,7 @@ Serial.println("");
                 
             case 3:
                 Rem_Dev3[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev3[i] = i;
                                 
                 }
@@ -1025,7 +1036,7 @@ Serial.println("");
             
             case 4:
                 Rem_Dev4[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev4[i] = i;
                                 
                 }
@@ -1033,7 +1044,7 @@ Serial.println("");
             
             case 5:
                 Rem_Dev5[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev5[i] = i;
                                 
                 }
@@ -1041,7 +1052,7 @@ Serial.println("");
                        
             case 6:
                 Rem_Dev6[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev6[i] = i;
                 int L = i+2;
                 
@@ -1051,7 +1062,7 @@ Serial.println("");
                 
             case 7:
                 Rem_Dev7[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev7[i] = i;
                                 
                 }
@@ -1059,7 +1070,7 @@ Serial.println("");
         
            case 8:
                 Rem_Dev8[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev8[i] = i;
                                 
                 }
@@ -1067,7 +1078,7 @@ Serial.println("");
         
           case 9:
                 Rem_Dev9[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev9[i] = i;
                 
                 
@@ -1076,7 +1087,7 @@ Serial.println("");
         
           case 10:
                 Rem_Dev10[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev10[i] = i;
                 
                 }
@@ -1085,7 +1096,7 @@ Serial.println("");
 
           case 11:
                 Rem_Dev11[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev11[i] = i;
                 
                 }
@@ -1094,7 +1105,7 @@ Serial.println("");
           
           case 12:
                 Rem_Dev12[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev12[i] = i;
                 
                 }
@@ -1102,7 +1113,7 @@ Serial.println("");
 
           case 13:
                 Rem_Dev13[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev13[i] = i;
                 
                 }
@@ -1110,7 +1121,7 @@ Serial.println("");
           
          case 14:
                 Rem_Dev14[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev14[i] = i;
                 
                 }
@@ -1119,7 +1130,7 @@ Serial.println("");
         
         case 15:
                 Rem_Dev15[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev15[i] = i;
                 
                 }
@@ -1127,7 +1138,7 @@ Serial.println("");
         
         case 16:
                 Rem_Dev16[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev16[i] = i;
                 
                 }
@@ -1135,7 +1146,7 @@ Serial.println("");
         
         case 17:
                 Rem_Dev17[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev17[i] = i;
                 
                 }
@@ -1143,7 +1154,7 @@ Serial.println("");
 
         case 18:
                 Rem_Dev18[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev18[i] = i;
                 
                 }
@@ -1151,7 +1162,7 @@ Serial.println("");
 
         case 19:
                 Rem_Dev19[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev19[i] = i;
                 
                 }
@@ -1159,7 +1170,7 @@ Serial.println("");
 
         case 20:
                 Rem_Dev20[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev20[i] = i;
                 
                 }
@@ -1167,7 +1178,7 @@ Serial.println("");
 
         case 21:
                 Rem_Dev21[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev21[i] = i;
                 
                 }
@@ -1175,7 +1186,7 @@ Serial.println("");
 
         case 22:
                 Rem_Dev22[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev22[i] = i;
                 
                 }
@@ -1183,7 +1194,7 @@ Serial.println("");
 
         case 23:
                 Rem_Dev23[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev23[i] = i;
                 
                 }
@@ -1191,7 +1202,7 @@ Serial.println("");
 
         case 24:
                 Rem_Dev24[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev24[i] = i;
                 
                 }
@@ -1199,7 +1210,7 @@ Serial.println("");
 
         case 25:
                 Rem_Dev25[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev25[i] = i;
                 
                 }
@@ -1207,7 +1218,7 @@ Serial.println("");
 
         case 26:
                 Rem_Dev26[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev26[i] = i;
                 
                 }
@@ -1215,7 +1226,7 @@ Serial.println("");
 
         case 27:
                 Rem_Dev27[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev27[i] = i;
                
                 }
@@ -1223,7 +1234,7 @@ Serial.println("");
 
         case 28:
                 Rem_Dev28[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev28[i] = i;
                 
                 }
@@ -1231,28 +1242,28 @@ Serial.println("");
 
         case 29:
                 Rem_Dev29[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev29[i] = i;
                 }
                 break;
 
         case 30:
                 Rem_Dev30[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev30[i] = i;
                 }
                 break;
 
         case 31:
                 Rem_Dev31[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev31[i] = i;
                 }
                 break;
 
         case 32:
                 Rem_Dev32[0] = Device_ID;
-                for (int i=1; i <= OUTPUT_COUNT; i++){
+                for (int i=0; i <= OUTPUT_COUNT; i++){
                 Rem_Dev32[i] = i;
                 }
                 break;
