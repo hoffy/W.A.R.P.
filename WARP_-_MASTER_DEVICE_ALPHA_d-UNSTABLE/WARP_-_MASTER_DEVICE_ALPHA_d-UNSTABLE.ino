@@ -20,13 +20,13 @@
   |________________________________________________________________________________________________________________________|
   | Revision History:                                                                                                      |
   | _______________________________________________________________________________________________________________________|
-  | 1.0  - 7/14/17 - Initial Coding                                                                                        |
-  | 1.0a - 7/15/17 - Clarified variable names to avoid reader confusion between local device and remote device actions     |
-  | 1.0b - 7/15/17 - Added Code to reject any data without the correct data type identifier                                |                                                        |
-  |  "       "     - Error Handling Function Added                                                                         |
-  |  "       "     - Created Serial Terminal Identification Header in Setup Function                                       |
-  | 1.0c - 7/16/17 - Developed, Debugged, & Tested Local Switch Control Section of Web GUI                                 |
-  |  "        "     - Updated Error Handling to address the new packet data types                                                                                                              |
+  | ALPHA   - 7/14/17 - Initial Coding                                                                                        |
+  | ALPHA a - 7/15/17 - Clarified variable names to avoid reader confusion between local device and remote device actions     |
+  | ALPHA b - 7/15/17 - Added Code to reject any data without the correct data type identifier                                |                                                        |
+  | ALPHA c -   "     - Error Handling Function Added                                                                         |
+  |  "          "     - Created Serial Terminal Identification Header in Setup Function                                       |
+  | ALPHA d - 7/16/17 - Developed, Debugged, & Tested Local Switch Control Section of Web GUI                                 |
+  |  "        "       - Updated Error Handling to address the new packet data types                                                                                                              |
   |________________________________________________________________________________________________________________________}                                                           |
 
   BEGIN CODE
