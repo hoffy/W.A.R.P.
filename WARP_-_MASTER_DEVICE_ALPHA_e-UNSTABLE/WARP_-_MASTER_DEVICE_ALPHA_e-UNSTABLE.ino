@@ -856,7 +856,6 @@ void GetAjaxData(EthernetClient cl)
 
 
   if (Rem_Dev1[0] == 1) {
-    //CURRENT FAIL POINT
     //Serial.print(Rem_Dev1[0]);
     cl.println(F("<div class='tg-wrap'>"));
     cl.println(F("<table class='tg'>"));
@@ -882,237 +881,6 @@ void GetAjaxData(EthernetClient cl)
     }
     cl.println(F("</td>"));
 
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[2] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS2_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS2_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[3] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS3_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS3_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[4] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS4_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS4_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[5] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS5_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS5_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[6] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS6_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS6_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[7] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS7_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS7_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[8] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS8_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS8_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-
-    cl.println(F("</tr>"));
-
-    cl.println(F("<tr>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[9] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS9_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS9_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[10] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS10_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS10_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[11] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS11_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS11_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[12] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS12_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS12_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[13] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS13_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS13_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[14] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS14_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS14_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[15] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS15_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS15_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-    cl.println(F("<td class='tg-3ojx'>"));
-    if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[16] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS16_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    else {
-      cl.print(F("<center><a href='/?D1RS16_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
-    cl.println(F("</td>"));
-
-
     cl.println(F("</tr>"));
 
     cl.println(F("</table>"));
@@ -1120,6 +888,11 @@ void GetAjaxData(EthernetClient cl)
 
   }
   delay(150);
+
+if (HTTP_req.indexOf("/?D1RS1_on") > 0)digitalWrite(pin1, HIGH);
+  if (HTTP_req.indexOf("/?D1RS1_off") > 0) digitalWrite(pin1, LOW);
+
+
 
 }
 
