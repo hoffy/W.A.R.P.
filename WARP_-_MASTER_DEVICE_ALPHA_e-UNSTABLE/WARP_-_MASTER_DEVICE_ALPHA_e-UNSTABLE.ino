@@ -868,34 +868,52 @@ void GetAjaxData(EthernetClient cl)
 
     cl.println(F("<td class='tg-3ojx'>"));
     if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[1] && REMOTE_STATE == 1) {
-      cl.println(F("<center><a href='/?D1RS1_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
+
+    /*
+      //DEVELOP CODE THAT WILL DISPLAY "ON" REMOTE STATUS AND ALLOW SWITCHING (THAT WILL NOT CREATE A CONSTANT REFRESH STATE)
+    bus.print("S");
+    bus.print(" ");
+    bus.print(0);
+    bus.print(" ");
+    bus.print(1);
+    bus.print(" ");
+    bus.print(1);
+    bus.print(" ");
+    bus.print(1);
+    bus.print(" ");
+    bus.println("E");
+    Serial.println("D1RS1_on Signal Send");
+    delay(1000);
     }
     else {
-      cl.print(F("<center><a href='/?D1RS1_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
-      cl.println(F("<center><p style='color:red'>"));
-      cl.print("Label");
-      cl.println(F("</p></center>"));
-    }
+      DEVELOP CODE THAT WILL DISPLAY "OFF" REMOTE STATUS AND ALLOW SWITCHING (THAT WILL NOT CREATE A CONSTANT REFRESH STATE)
+    bus.print("S");
+    bus.print(" ");
+    bus.print(0);
+    bus.print(" ");
+    bus.print(1);
+    bus.print(" ");
+    bus.print(1);
+    bus.print(" ");
+    bus.print(0);
+    bus.print(" ");
+    bus.println("E");
+    Serial.println("D1RS1_off Signal Send");
+    delay(1000);
+      
+      }
     cl.println(F("</td>"));
 
     cl.println(F("</tr>"));
 
     cl.println(F("</table>"));
     cl.println(F("</div>"));
-
-  }
+*/
+  }  
   delay(150);
-
-if (HTTP_req.indexOf("/?D1RS1_on") > 0)digitalWrite(pin1, HIGH);
-  if (HTTP_req.indexOf("/?D1RS1_off") > 0) digitalWrite(pin1, LOW);
-
-
-
 }
 
+}
 //---------FUNCTION :: BEGIN Process Incoming Data Reports From RS485 Bus ------------------------------------------------
 
 void Process_Incoming_Data(String INData)
@@ -908,6 +926,7 @@ void Process_Incoming_Data(String INData)
   String REMOTE_STATUS_INBOUND;
   String EOT_CHAR;
   // Inbound Packet Consists of:  ( DATA_TYPE, IN_ID, ID, Switch, Status )
+
 
   DATA_TYPE = getStringPartByNr(INData, ' ', 0);
 
