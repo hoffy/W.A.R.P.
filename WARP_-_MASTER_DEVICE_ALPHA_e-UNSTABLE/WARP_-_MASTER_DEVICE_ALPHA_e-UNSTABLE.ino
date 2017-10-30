@@ -1231,9 +1231,9 @@ void Process_Incoming_Data(String INData)
         delay(10);
     }
 
-        delay(10);
+    delay(10);
   }
-  
+
   else if (DATA_TYPE != "A" || "B" || "S")
   {
     Error_Handler(1);
