@@ -890,10 +890,10 @@ void GetAjaxData(EthernetClient cl)
       cl.println(F("' method='get'>"));
       cl.println(F("<button>Turn Off</button>"));
       cl.println(F("</form>"));
-       }
+    }
     else {
-      
-cl.println(F("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'></center>"));
+
+      cl.println(F("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'></center>"));
       cl.println(F("<center><p style='color:green'>"));
       cl.print("Switch 1");
       cl.println(F("</p></center>"));
@@ -915,12 +915,12 @@ cl.println(F("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-co
       cl.println(F("<button>Turn ON</button>"));
       cl.println(F("</form>"));
 
-      
+
+    }
+    delay(150);
+
+
   }
-  delay(150);
-
-
-}
 
 
 }
@@ -1051,7 +1051,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev7[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev7[i] = i;
-
         }
         break;
 
@@ -1059,7 +1058,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev8[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev8[i] = i;
-
         }
         break;
 
@@ -1067,8 +1065,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev9[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev9[i] = i;
-
-
         }
         break;
 
@@ -1076,25 +1072,20 @@ void Process_Incoming_Data(String INData)
         Rem_Dev10[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev10[i] = i;
-
         }
         break;
-
 
       case 11:
         Rem_Dev11[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev11[i] = i;
-
         }
         break;
-
 
       case 12:
         Rem_Dev12[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev12[i] = i;
-
         }
         break;
 
@@ -1102,7 +1093,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev13[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev13[i] = i;
-
         }
         break;
 
@@ -1110,16 +1100,12 @@ void Process_Incoming_Data(String INData)
         Rem_Dev14[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev14[i] = i;
-
         }
         break;
-
-
       case 15:
         Rem_Dev15[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev15[i] = i;
-
         }
         break;
 
@@ -1127,7 +1113,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev16[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev16[i] = i;
-
         }
         break;
 
@@ -1135,7 +1120,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev17[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev17[i] = i;
-
         }
         break;
 
@@ -1143,7 +1127,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev18[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev18[i] = i;
-
         }
         break;
 
@@ -1151,7 +1134,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev19[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev19[i] = i;
-
         }
         break;
 
@@ -1159,7 +1141,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev20[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev20[i] = i;
-
         }
         break;
 
@@ -1167,7 +1148,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev21[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev21[i] = i;
-
         }
         break;
 
@@ -1175,7 +1155,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev22[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev22[i] = i;
-
         }
         break;
 
@@ -1183,7 +1162,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev23[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev23[i] = i;
-
         }
         break;
 
@@ -1191,7 +1169,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev24[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev24[i] = i;
-
         }
         break;
 
@@ -1199,7 +1176,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev25[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev25[i] = i;
-
         }
         break;
 
@@ -1207,7 +1183,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev26[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev26[i] = i;
-
         }
         break;
 
@@ -1215,7 +1190,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev27[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev27[i] = i;
-
         }
         break;
 
@@ -1223,7 +1197,6 @@ void Process_Incoming_Data(String INData)
         Rem_Dev28[0] = Device_ID;
         for (int i = 1; i <= OUTPUT_COUNT; i++) {
           Rem_Dev28[i] = i;
-
         }
         break;
 
@@ -1255,21 +1228,18 @@ void Process_Incoming_Data(String INData)
         }
         break;
 
-        //}
-
         delay(10);
     }
 
-    delay(10);
+        delay(10);
   }
+  
   else if (DATA_TYPE != "A" || "B" || "S")
   {
     Error_Handler(1);
   }
-
 }
 //---------FUNCTION :: END Process Incoming Data Reports From RS485 Bus --------------------------------------------------
-
 
 //---------FUNCTION :: END Parse Incoming Data Reports From RS485 Bus --------------------------------------------------
 // OUTSOURCED FUNCTION https://github.com/BenTommyE/Arduino_getStringPartByNr
@@ -1295,7 +1265,6 @@ String getStringPartByNr(String data, char separator, int index)
       //return text and stop if the next separator appears - to save CPU-time
       return dataPart;
       break;
-
     }
 
   }
@@ -1304,12 +1273,10 @@ String getStringPartByNr(String data, char separator, int index)
 }
 //---------FUNCTION :: END Parse Incoming Data Reports From RS485 Bus --------------------------------------------------
 
-
-
 void Error_Handler(int ERR)
 {
   switch (ERR) {
-    /* ERROR CLASS 1: RS485 Communications Error
+    /*    ERROR CLASS 1: RS485 Communications Error
           ERROR #1-001 - Packet Identification Error - Non-Critical
           ERROR #1-002 - Packet Parsing Error - Critical
     */
@@ -1330,6 +1297,3 @@ void Error_Handler(int ERR)
   }
   return;
 }
-
-
-
