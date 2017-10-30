@@ -869,86 +869,61 @@ void GetAjaxData(EthernetClient cl)
     cl.println(F("<td class='tg-3ojx'>"));
     if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[1] && REMOTE_STATE == 1) {
 
-    cl.println(F("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'></center>"));
-    cl.println(F("<center><p style='color:green'>"));
-    cl.print("Switch 1");
-    cl.println(F("</p></center>"));
-    cl.println(F("<button type='button' onclick='loadDoc()"));
-    bus.print("S");
-    bus.print(" ");
-    bus.print(0);
-    bus.print(" ");
-    bus.print(1);
-    bus.print(" ");
-    bus.print(1);
-    bus.print(" ");
-    bus.print(1);
-    bus.print(" ");
-    bus.println("E");
-    Serial.println("D1RS1_on Signal Send");
-    delay(1000);
-    cl.println(F("'>Turn Off</button>"));
-
-cl.println(F("<script>"));
-cl.println(F("function loadDoc() {"));
-cl.println(F("var xhttp = new XMLHttpRequest();"));
-cl.println(F("xhttp.onreadystatechange = function() {"));
-cl.println(F("if (this.readyState == 4 && this.status == 200) {"));
-cl.println(F("document.getElementById('demo').innerHTML ="));
-cl.println(F("this.responseText;"));
-cl.println(F("}"));
-cl.println(F("};"));
-cl.println(F("xhttp.open('GET', '/?D1RS1_on', true);"));
-cl.println(F("xhttp.send();"));
-cl.println(F("}"));
-cl.println(F("</script>"));
-}
+      cl.println(F("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'></center>"));
+      cl.println(F("<center><p style='color:green'>"));
+      cl.print("Switch 1");
+      cl.println(F("</p></center>"));
+      cl.println(F("<form action='"));
+      bus.print("S");
+      bus.print(" ");
+      bus.print(0);
+      bus.print(" ");
+      bus.print(1);
+      bus.print(" ");
+      bus.print(1);
+      bus.print(" ");
+      bus.print(0);
+      bus.print(" ");
+      bus.println("E");
+      Serial.println("D1RS1_off Signal Send");
+      delay(1000);
+      cl.println(F("' method='get'>"));
+      cl.println(F("<button>Turn Off</button>"));
+      cl.println(F("</form>"));
+       }
     else {
-       cl.println(F("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch ON'></center>"));
-    cl.println(F("<center><p style='color:red'>"));
-    cl.print("Switch 1");
-    cl.println(F("</p></center>"));
-    cl.println(F("<button type='button' onclick='loadDoc()"));
-    bus.print("S");
-    bus.print(" ");
-    bus.print(0);
-    bus.print(" ");
-    bus.print(1);
-    bus.print(" ");
-    bus.print(1);
-    bus.print(" ");
-    bus.print(1);
-    bus.print(" ");
-    bus.println("E");
-    Serial.println("D1RS1_on Signal Send");
-    delay(1000);
-    cl.println(F("'>Turn On</button>"));
+      
+cl.println(F("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'></center>"));
+      cl.println(F("<center><p style='color:green'>"));
+      cl.print("Switch 1");
+      cl.println(F("</p></center>"));
+      cl.println(F("<form action='"));
+      bus.print("S");
+      bus.print(" ");
+      bus.print(0);
+      bus.print(" ");
+      bus.print(1);
+      bus.print(" ");
+      bus.print(1);
+      bus.print(" ");
+      bus.print(1);
+      bus.print(" ");
+      bus.println("E");
+      Serial.println("D1RS1_on Signal Send");
+      delay(1000);
+      cl.println(F("' method='get'>"));
+      cl.println(F("<button>Turn ON</button>"));
+      cl.println(F("</form>"));
 
-cl.println(F("<script>"));
-cl.println(F("function loadDoc() {"));
-cl.println(F("var xhttp = new XMLHttpRequest();"));
-cl.println(F("xhttp.onreadystatechange = function() {"));
-cl.println(F("if (this.readyState == 4 && this.status == 200) {"));
-cl.println(F("document.getElementById('demo').innerHTML ="));
-cl.println(F("this.responseText;"));
-cl.println(F("}"));
-cl.println(F("};"));
-cl.println(F("xhttp.open('GET', '/?D1RS1_on', true);"));
-cl.println(F("xhttp.send();"));
-cl.println(F("}"));
-cl.println(F("</script>"));
-      }
-    cl.println(F("</td>"));
-
-    cl.println(F("</tr>"));
-
-    cl.println(F("</table>"));
-    cl.println(F("</div>"));
-
-  }  
+      
+  }
   delay(150);
+
+
 }
 
+
+}
 
 //---------FUNCTION :: BEGIN Process Incoming Data Reports From RS485 Bus ------------------------------------------------
 
