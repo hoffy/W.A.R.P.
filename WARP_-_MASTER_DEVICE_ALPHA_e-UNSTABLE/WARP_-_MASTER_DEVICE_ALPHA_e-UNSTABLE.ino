@@ -869,53 +869,51 @@ void GetAjaxData(EthernetClient cl)
     cl.println(F("<td class='tg-3ojx'>"));
     if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[1] && REMOTE_STATE == 1) {
 
-      cl.println(F("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'></center>"));
+      cl.println("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON' onclick='D1RS1_off)'></center>");
       cl.println(F("<center><p style='color:green'>"));
       cl.print("Switch 1");
       cl.println(F("</p></center>"));
-      cl.println(F("<form action='"));
-      bus.print("S");
-      bus.print(" ");
-      bus.print(0);
-      bus.print(" ");
-      bus.print(1);
-      bus.print(" ");
-      bus.print(1);
-      bus.print(" ");
-      bus.print(0);
-      bus.print(" ");
-      bus.println("E");
-      Serial.println("D1RS1_off Signal Send");
-      delay(1000);
-      cl.println(F("' method='get'>"));
-      cl.println(F("<button>Turn Off</button>"));
-      cl.println(F("</form>"));
+      cl.println("<script>");
+      cl.println("function D1RS1_off() {");
+       bus.print("S");
+       bus.print(" ");
+       bus.print(0);
+       bus.print(" ");
+       bus.print(1);
+       bus.print(" ");
+       bus.print(1);
+       bus.print(" ");
+       bus.print(0);
+       bus.print(" ");
+       bus.println("E");
+       Serial.println("D1RS1_off Signal Send");
+       delay(1000);
+      cl.println("}");
+      cl.println("</script>");
     }
     else {
 
-      cl.println(F("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'></center>"));
+      cl.println("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF' onclick='D1RS1_on)'></center>");
       cl.println(F("<center><p style='color:green'>"));
       cl.print("Switch 1");
       cl.println(F("</p></center>"));
-      cl.println(F("<form action='"));
-      bus.print("S");
-      bus.print(" ");
-      bus.print(0);
-      bus.print(" ");
-      bus.print(1);
-      bus.print(" ");
-      bus.print(1);
-      bus.print(" ");
-      bus.print(1);
-      bus.print(" ");
-      bus.println("E");
-      Serial.println("D1RS1_on Signal Send");
-      delay(1000);
-      cl.println(F("' method='get'>"));
-      cl.println(F("<button>Turn ON</button>"));
-      cl.println(F("</form>"));
-
-
+      cl.println("<script>");
+      cl.println("function D1RS1_on() {");
+       bus.print("S");
+       bus.print(" ");
+       bus.print(0);
+       bus.print(" ");
+       bus.print(1);
+       bus.print(" ");
+       bus.print(1);
+       bus.print(" ");
+       bus.print(1);
+       bus.print(" ");
+       bus.println("E");
+       Serial.println("D1RS1_on Signal Send");
+       delay(1000);
+      cl.println("}");
+      cl.println("</script>");
     }
     delay(150);
 
@@ -924,6 +922,7 @@ void GetAjaxData(EthernetClient cl)
 
 
 }
+
 
 //---------FUNCTION :: BEGIN Process Incoming Data Reports From RS485 Bus ------------------------------------------------
 
@@ -1272,6 +1271,8 @@ String getStringPartByNr(String data, char separator, int index)
   return dataPart;
 }
 //---------FUNCTION :: END Parse Incoming Data Reports From RS485 Bus --------------------------------------------------
+
+
 
 void Error_Handler(int ERR)
 {
