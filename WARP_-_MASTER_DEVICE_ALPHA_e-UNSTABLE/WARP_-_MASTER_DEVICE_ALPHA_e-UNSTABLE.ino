@@ -869,59 +869,35 @@ void GetAjaxData(EthernetClient cl)
     cl.println(F("<td class='tg-3ojx'>"));
     if (FROM_ID == 1 && REMOTE_SWITCH == Rem_Dev1[1] && REMOTE_STATE == 1) {
 
-      cl.println("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON' onclick='D1RS1_off)'></center>");
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Switch 1");
-      cl.println(F("</p></center>"));
-      cl.println("<script>");
-      cl.println("function D1RS1_off() {");
-       bus.print("S");
-       bus.print(" ");
-       bus.print(0);
-       bus.print(" ");
-       bus.print(1);
-       bus.print(" ");
-       bus.print(1);
-       bus.print(" ");
-       bus.print(0);
-       bus.print(" ");
-       bus.println("E");
-       Serial.println("D1RS1_off Signal Send");
-       delay(1000);
-      cl.println("}");
-      cl.println("</script>");
-    }
+    cl.println(F("<center><a href='/?D1RS1_off'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-green.png' height='30' size='30' alt='Switch ON'</a></center>"));
+    cl.println(F("<center><p style='color:green'>"));
+    cl.print("Switch #1");
+    cl.println(F("</p></center>"));
+       }
     else {
 
-      cl.println("<center><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF' onclick='D1RS1_on)'></center>");
-      cl.println(F("<center><p style='color:green'>"));
-      cl.print("Switch 1");
-      cl.println(F("</p></center>"));
-      cl.println("<script>");
-      cl.println("function D1RS1_on() {");
-       bus.print("S");
-       bus.print(" ");
-       bus.print(0);
-       bus.print(" ");
-       bus.print(1);
-       bus.print(" ");
-       bus.print(1);
-       bus.print(" ");
-       bus.print(1);
-       bus.print(" ");
-       bus.println("E");
-       Serial.println("D1RS1_on Signal Send");
-       delay(1000);
-      cl.println("}");
-      cl.println("</script>");
+    cl.println(F("<center><a href='/?D1RS1_on'><img src='http://hoffysworld.creativevisionmedia.net/wp-content/uploads/sites/3/2017/07/Bullet-red.png' height='30' size='30' alt='Switch OFF'</a></center>"));
+    cl.println(F("<center><p style='color:red'>"));
+    cl.print("Switch #1");
+    cl.println(F("</p></center>"));
     }
     delay(150);
 
-
+   if (HTTP_req.indexOf("/?D1RS1_on") > 0) 
+   {
+    Serial.print("D1RS1 On");
+       
+       }
+   
+   
+   if (HTTP_req.indexOf("/?D1RS1_off") > 0)
+   {
+    Serial.print("D1RS1 Off");
+       
+       }
+ 
   }
-
-
-}
+  }
 
 
 //---------FUNCTION :: BEGIN Process Incoming Data Reports From RS485 Bus ------------------------------------------------
